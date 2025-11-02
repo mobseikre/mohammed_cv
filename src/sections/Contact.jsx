@@ -7,6 +7,8 @@ import ContactExperience from "../components/models/contact/ContactExperience";
 const Contact = () => {
   const formRef = useRef(null);
   const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState("");
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -21,6 +23,8 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true); // Show loading state
+    setError(""); // Clear previous errors
+    setSuccess(false); // Clear previous success message
 
     try {
       await emailjs.sendForm(
@@ -30,10 +34,12 @@ const Contact = () => {
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
       );
 
-      // Reset form and stop loading
+      // Reset form and show success
       setForm({ name: "", email: "", message: "" });
-    } catch (error) {
-      console.error("EmailJS Error:", error); // Optional: show toast
+      setSuccess(true);
+    } catch (err) {
+      console.error("EmailJS Error:", err);
+      setError("Failed to send message. Please try again or contact me directly.");
     } finally {
       setLoading(false); // Always stop loading, even on error
     }
@@ -104,6 +110,20 @@ const Contact = () => {
                     </div>
                   </div>
                 </button>
+
+                {success && (
+                  <div className="mt-4 p-4 bg-green-500/20 border border-green-500 rounded-lg">
+                    <p className="text-green-400 text-sm">
+                      ✓ Message sent successfully! I'll get back to you soon.
+                    </p>
+                  </div>
+                )}
+
+                {error && (
+                  <div className="mt-4 p-4 bg-red-500/20 border border-red-500 rounded-lg">
+                    <p className="text-red-400 text-sm">{error}</p>
+                  </div>
+                )}
               </form>
             </div>
           </div>
