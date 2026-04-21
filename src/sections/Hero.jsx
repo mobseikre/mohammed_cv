@@ -51,7 +51,7 @@ const Hero = () => {
             </div>
 
             <p className="text-white-50 md:text-xl relative z-10 pointer-events-none">
-              Hi, I’m Mohammed Bseikri, a Software Engineering Student, UI/UX Designer, and Mobile & Web Developer based in Benghazi, Libya.
+              Hi, I’m Mohammed Bseikri, a Software Engineer based in Benghazi, Libya, with a focus on frontend development for web and mobile applications.
             </p>
 
             <Button

@@ -25,7 +25,7 @@ const words = [
 ];
 
 const counterItems = [
-  { value: 3, suffix: "+", label: "Years Learning" },
+  { value: 5, suffix: "+", label: "Years Learning" },
   { value: 20, suffix: "+", label: "Projects Built" },
   { value: 5, suffix: "+", label: "Technologies" },
   { value: 100, suffix: "%", label: "Passionate" },
@@ -159,6 +159,17 @@ const techStackIcons = [
 ];
 
 const expCards = [
+  {
+    review: "Working as a Software Engineer at Governance House Technology, a global company — based at the Egypt (Cairo) branch — contributing to software implementation tasks and cross-functional technical collaboration.",
+    title: "Software Engineer",
+    company: "Governance House Technology",
+    location: "Cairo, Egypt",
+    date: "07/2025 - Present",
+    responsibilities: [
+      "Working as a Software Engineer at Governance House Technology, a global company, serving from the Egypt (Cairo) branch.",
+      "Contributing to software implementation tasks and cross-functional technical collaboration across international teams.",
+    ],
+  },
   {
     review: "As a Mobile Developer Intern at Libyan Academy for Communication and Technology, I developed mobile app prototypes using Flutter and Laravel, focusing on responsive UI, performance, and scalability while strengthening my full-stack and agile teamwork skills.",
     imgPath: "/images/exp1.png",
